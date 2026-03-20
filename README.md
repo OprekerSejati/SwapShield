@@ -158,6 +158,15 @@ Feel free to:
 
 ---
 
+## 🔌 Future Integrations
+
+SwapShield is designed to evolve into an API that can be integrated into:
+- DEX frontends
+- Trading bots
+- Portfolio dashboards
+
+---
+
 ## 🤝 Why This Matters
 
 DeFi is powerful — but unsafe UX leads to user losses.
