@@ -162,9 +162,13 @@ Feel free to:
 ## 🔌 Future Integrations
 
 SwapShield is designed to evolve into an API that can be integrated into:
-- DEX frontends
-- Trading bots
-- Portfolio dashboards
+
+- 🧩 DEX frontends (pre-trade risk warnings)
+- 🤖 Trading bots (risk-aware execution)
+- 💼 Portfolio dashboards
+- 🛡️ Wallet safety layers
+
+The goal is to provide a reusable risk engine across the DeFi ecosystem.
 
 ---
 
