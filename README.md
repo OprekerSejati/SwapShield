@@ -1,5 +1,9 @@
 # 🛡️ SwapShield — DeFi Slippage & Price Impact Guard
 
+![Go](https://img.shields.io/badge/Go-1.22-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+![Status](https://img.shields.io/badge/status-MVP-orange)
+
 > A safety layer that prevents catastrophic swap losses in DeFi.
 
 ---
