@@ -5,6 +5,7 @@
 ![Status](https://img.shields.io/badge/status-MVP-orange)
 
 > A safety layer that prevents catastrophic swap losses in DeFi.
+SwapShield is an early-stage DeFi risk engine focused on pre-trade protection.
 
 ---
 
