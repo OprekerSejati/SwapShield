@@ -8,30 +8,39 @@ func EvaluateRisk(result *models.SwapResult) {
 	}
 
 	impact := result.PriceImpact
-	baseMessage := ""
+	liquidity := result.LiquidityUsage
 
+	// Default values
+	level := "LOW"
+	message := "Safe trade"
+
+	// Step 1: Price impact based classification
 	switch {
 	case impact > 50:
-		result.WarningLevel = "CRITICAL"
-		baseMessage = "You may lose more than 50% due to extreme price impact"
+		level = "CRITICAL"
+		message = "You may lose more than 50% due to extreme price impact"
 	case impact > 20:
-		result.WarningLevel = "HIGH"
-		baseMessage = "High price impact detected"
+		level = "HIGH"
+		message = "High price impact detected"
 	case impact > 5:
-		result.WarningLevel = "MEDIUM"
-		baseMessage = "Moderate price impact"
-	default:
-		result.WarningLevel = "LOW"
-		baseMessage = "Safe trade"
+		level = "MEDIUM"
+		message = "Moderate price impact"
 	}
 
-	if result.LiquidityUsage > 30 && result.WarningLevel != "CRITICAL" {
-		result.WarningLevel = "HIGH"
+	// Step 2: Liquidity-based overrides (stronger signal)
+	if liquidity > 80 {
+		level = "CRITICAL"
+		message = "This trade is extremely unsafe due to high liquidity consumption"
+	} else if liquidity > 30 && level != "CRITICAL" {
+		level = "HIGH"
 	}
 
-	result.Message = baseMessage
-
-	if result.LiquidityUsage > 10 {
-		result.Message += " | Trade consumes a large portion of pool liquidity"
+	// Step 3: Append liquidity insight (UX layer)
+	if liquidity > 10 {
+		message += " | Trade consumes a large portion of pool liquidity"
 	}
+
+	// Final assignment
+	result.WarningLevel = level
+	result.Message = message
 }
