@@ -172,9 +172,10 @@ SwapShield is designed to evolve into an API that can be integrated into:
 
 DeFi is powerful — but unsafe UX leads to user losses.
 
-SwapShield aims to:
+SwapShield can prevent losses of up to 90%+ in extreme low-liquidity swaps.
 
-> Make every swap **transparent, predictable, and safe**
+SwapShield aims to:
+> Make every swap transparent, predictable, and safe
 
 ---
 
