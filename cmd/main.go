@@ -53,6 +53,7 @@ func runScenario(title string, poolAmountIn float64) {
 }
 
 func main() {
-	runScenario("Small Trade", 1000)
-	runScenario("Large Trade", 50000)
+    runScenario("Small Trade", 1000)
+    runScenario("Large Trade", 50000)
+    runScenario("Extreme Trade", 90000) // tambah ini
 }
