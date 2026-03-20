@@ -8,7 +8,11 @@
 SwapShield is an early-stage DeFi risk engine focused on pre-trade protection.
 
 ---
+## 🎥 Demo
 
+![demo](./assets/swapShield.gif)
+
+---
 ## 🚨 The Problem
 
 In AMM-based DEXs (like Uniswap), large swaps can silently suffer from **extreme price impact** due to limited liquidity.
