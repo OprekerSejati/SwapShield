@@ -137,6 +137,17 @@ go run cmd/main.go
 
 ---
 
+## 🤝 Contributing
+
+Contributions are welcome!
+
+Feel free to:
+- Open issues
+- Suggest improvements
+- Submit pull requests
+
+---
+
 ## 🌐 Roadmap
 
 * [ ] Integrate real on-chain data (Uniswap pools)
