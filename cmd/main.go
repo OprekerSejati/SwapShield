@@ -2,7 +2,10 @@ package main
 
 import (
 	"fmt"
+	"log"
+	"os"
 
+	"swapshield/api"
 	"swapshield/internal/dex"
 	"swapshield/internal/models"
 	"swapshield/internal/risk"
@@ -53,7 +56,16 @@ func runScenario(title string, poolAmountIn float64) {
 }
 
 func main() {
-    runScenario("Small Trade", 1000)
-    runScenario("Large Trade", 50000)
-    runScenario("Extreme Trade", 90000) // tambahan ini
+	if len(os.Args) > 1 && os.Args[1] == "api" {
+		fmt.Println("Starting SwapShield API on :8080")
+		fmt.Println("Endpoint: POST /simulate-swap")
+		if err := api.StartServer(":8080"); err != nil {
+			log.Fatalf("failed to start API server: %v", err)
+		}
+		return
+	}
+
+	runScenario("Small Trade", 1000)
+	runScenario("Large Trade", 50000)
+	runScenario("Extreme Trade", 90000)
 }
